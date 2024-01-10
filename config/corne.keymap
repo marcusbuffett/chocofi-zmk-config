@@ -616,5 +616,23 @@
                  &trans  &kp SPACE  &trans    &trans  &kp O  &trans
             >;
         };
+
+        Symbols {
+            bindings = <
+  &trans             &kp AT_SIGN  &kp MINUS             &kp LBKT               &trans           &kp TILDE  &kp LESS_THAN  &kp GREATER_THAN  &kp FSLH  &kp ASTERISK
+  &kp DOUBLE_QUOTES  &kp SQT      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AMPERSAND    &kp GRAVE  &kp DOT        &kp COLON         &kp SEMI  &trans
+  &kp PERCENT        &kp EQUAL    &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE         &kp PLUS   &kp QUESTION   &kp EXCLAMATION   &kp BSLH  &kp CARET
+                                  &kp UNDERSCORE        &kp SPACE              &trans           &trans     &trans         &trans
+            >;
+        };
+
+        sticky_mods {
+            bindings = <
+  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+                  &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
     };
 };
