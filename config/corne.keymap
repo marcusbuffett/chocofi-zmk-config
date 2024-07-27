@@ -9,14 +9,10 @@
 
 #define DEFAULT_L 0
 
-&lt {
-    quick-tap-ms = <200>;
-};
+&lt { quick-tap-ms = <200>; };
 
 / {
-    chosen {
-        zmk,matrix_transform = &five_column_transform;
-    };
+    chosen { zmk,matrix_transform = &five_column_transform; };
 
     behaviors {
         hm: homerow_mods {
@@ -28,9 +24,6 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-    };
-
-    macros {
     };
 
     combos {
@@ -53,28 +46,28 @@
 
         Base {
             bindings = <
-  &trans  &kp G  &kp P           &kp M      &trans    &trans  &kp B  &kp U  &kp LA(BSPC)  &kp BSPC
-  &kp D   &kp S  &kp T           &kp R      &kp L     &kp H   &kp N  &kp E  &kp A         &kp I
-  &kp C   &kp V  &kp K           &kp W      &trans    &trans  &kp F  &kp J  &kp X         &kp Y
-                 &sk LEFT_SHIFT  &kp SPACE  &trans    &sl 2   &kp O  &sl 1
+  &sl 3  &kp G  &kp P           &kp M      &trans         &kp LG(SPACE)  &kp B  &kp U  &kp LA(BSPC)  &kp BSPC
+  &kp D  &kp S  &kp T           &kp R      &kp L          &kp H          &kp N  &kp E  &kp A         &kp I
+  &kp C  &kp V  &kp K           &kp W      &trans         &trans         &kp F  &kp J  &kp X         &kp Y
+                &sk LEFT_SHIFT  &kp SPACE  &lt 4 ENTER    &sl 1          &kp O  &sl 2
             >;
         };
 
         Symbols {
             bindings = <
-  &trans             &kp AT_SIGN  &kp MINUS             &kp LBKT               &trans           &kp TILDE  &kp LESS_THAN  &kp GREATER_THAN  &kp FSLH  &kp ASTERISK
-  &kp DOUBLE_QUOTES  &kp SQT      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AMPERSAND    &kp GRAVE  &kp DOT        &kp COLON         &kp SEMI  &trans
-  &kp PERCENT        &kp EQUAL    &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE         &kp PLUS   &kp QUESTION   &kp EXCLAMATION   &kp BSLH  &kp CARET
-                                  &kp UNDERSCORE        &kp SPACE              &to 3            &trans     &trans         &trans
+  &kp AT_SIGN        &kp MINUS  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp DOLLAR       &kp TILDE  &kp LESS_THAN  &kp GREATER_THAN  &kp FSLH   &kp ASTERISK
+  &kp DOUBLE_QUOTES  &kp SEMI   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AMPERSAND    &kp GRAVE  &kp DOT        &kp SINGLE_QUOTE  &kp COMMA  &kp COLON
+  &kp PERCENT        &kp EQUAL  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE         &kp PLUS   &kp QUESTION   &kp EXCLAMATION   &kp BSLH   &kp CARET
+                                &kp UNDERSCORE        &trans                 &to 3            &trans     &trans         &trans
             >;
         };
 
         sticky_mods {
             bindings = <
-  &trans          &trans     &trans        &trans        &trans    &trans  &trans        &trans        &trans     &trans
-  &kp LEFT_SHIFT  &sk LCTRL  &sk LEFT_ALT  &sk LEFT_GUI  &trans    &trans  &sk LEFT_GUI  &sk LEFT_ALT  &sk LCTRL  &kp LEFT_SHIFT
-  &trans          &trans     &trans        &trans        &trans    &trans  &trans        &trans        &trans     &trans
-                             &trans        &trans        &trans    &trans  &trans        &trans
+  &trans          &trans     &trans        &trans        &trans    &trans                    &trans        &trans        &trans     &trans
+  &kp LEFT_SHIFT  &sk LCTRL  &sk LEFT_ALT  &sk LEFT_GUI  &trans    &kp LS(LA(LC(LEFT_GUI)))  &sk LEFT_GUI  &sk LEFT_ALT  &sk LCTRL  &kp LEFT_SHIFT
+  &trans          &trans     &trans        &trans        &trans    &trans                    &trans        &trans        &trans     &trans
+                             &trans        &trans        &trans    &trans                    &trans        &trans
             >;
         };
 
@@ -84,6 +77,15 @@
   &trans  &trans  &trans  &trans  &trans    &kp DOT       &kp N4  &kp N5  &kp N6  &kp N0
   &trans  &trans  &trans  &trans  &trans    &kp MINUS     &kp N1  &kp N2  &kp N3  &kp LS(STAR)
                   &trans  &trans  &trans    &trans        &trans  &trans
+            >;
+        };
+
+        layer_4 {
+            bindings = <
+  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+                  &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
