@@ -15,21 +15,22 @@
     chosen { zmk,matrix_transform = &five_column_transform; };
 
     behaviors {
-        hm: homerow_mods {
+        tap_repeat_hold_layer: tap_repeat_hold_layer {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            label = "TAP_REPEAT_HOLD_LAYER";
+            bindings = <&sl>, <&key_repeat>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick_tap_ms = <200>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
         };
 
-        key_repeat: key_repeat {
-            compatible = "zmk,behavior-key-repeat";
-            label = "KEY_REPEAT";
-            #binding-cells = <0>;
-            usage-pages = <HID_USAGE_KEY HID_USAGE_CONSUMER>;
+        tkp_htl: tkp_htl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TKP_HTL";
+            bindings = <&tog>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
         };
     };
 
@@ -54,10 +55,10 @@
 
         Base {
             bindings = <
-  &sl 3  &kp G  &kp P           &kp M      &trans         &kp LG(SPACE)  &kp B  &kp U  &kp LA(BSPC)  &kp BSPC
-  &kp D  &kp S  &kp T           &kp R      &kp L          &kp H          &kp N  &kp E  &kp A         &kp I
-  &kp C  &kp V  &kp K           &kp W      &trans         &trans         &kp F  &kp J  &kp X         &kp Y
-                &sk LEFT_SHIFT  &kp SPACE  &lt 4 ENTER    &sl 1          &kp O  &sl 2
+  &sl 3  &kp G  &kp P           &kp M      &tkp_htl 5 GLOBE              &kp LG(SPACE)  &kp B  &kp U  &kp LA(BSPC)  &kp BSPC
+  &kp D  &kp S  &kp T           &kp R      &kp L                         &kp H          &kp N  &kp E  &kp A         &kp I
+  &kp C  &kp V  &kp K           &kp W      &trans                        &trans         &kp F  &kp J  &kp X         &kp Y
+                &sk LEFT_SHIFT  &kp SPACE  &tap_repeat_hold_layer 4 0    &sl 1          &kp O  &sl 2
             >;
         };
 
@@ -81,19 +82,28 @@
 
         Numbers {
             bindings = <
-  &trans  &trans  &trans  &trans  &trans    &kp Z      &kp N7  &kp N8  &kp N9  &kp FSLH
-  &trans  &trans  &trans  &trans  &trans    &kp DOT    &kp N4  &kp N5  &kp N6  &kp N0
-  &trans  &trans  &trans  &trans  &trans    &kp MINUS  &kp N1  &kp N2  &kp N3  &kp LS(Q)
-                  &trans  &trans  &trans    &trans     &trans  &trans
+  &trans  &trans  &trans  &trans  &trans    &kp Z    &kp N7  &kp N8  &kp N9  &kp FSLH
+  &trans  &trans  &trans  &trans  &trans    &kp DOT  &kp N4  &kp N5  &kp N6  &kp N0
+  &trans  &trans  &trans  &trans  &trans    &kp Q    &kp N1  &kp N2  &kp N3  &trans
+                  &trans  &trans  &trans    &trans   &trans  &trans
             >;
         };
 
-        layer_4 {
+        Navigation {
             bindings = <
-  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                  &trans  &trans  &trans    &trans  &trans  &trans
+  &trans          &trans    &trans        &trans     &trans    &trans  &kp RET       &kp TAB       &kp Q      &trans
+  &kp LEFT_ARROW  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans    &trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT
+  &trans          &trans    &trans        &trans     &trans    &trans  &trans        &trans        &trans     &trans
+                            &trans        &trans     &trans    &trans  &trans        &trans
+            >;
+        };
+
+        one_hand {
+            bindings = <
+  &trans     &kp LC(UP)  &kp LC(DOWN)  &kp LS(LG(KP_NUMBER_4))  &trans       &trans  &trans  &trans  &trans  &trans
+  &kp LG(C)  &kp LG(V)   &kp BSPC      &kp TAB                  &trans       &trans  &trans  &trans  &trans  &trans
+  &trans     &trans      &trans        &kp LS(LG(M))            &to 0        &trans  &trans  &trans  &trans  &trans
+                         &kp LALT      &kp LGUI                 &kp LSHFT    &trans  &trans  &trans
             >;
         };
     };
