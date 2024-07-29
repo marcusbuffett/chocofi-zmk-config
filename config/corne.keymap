@@ -11,6 +11,9 @@
 
 &lt { quick-tap-ms = <200>; };
 
+&sl {
+};
+
 / {
     chosen { zmk,matrix_transform = &five_column_transform; };
 
@@ -32,6 +35,15 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        bsl: bsl {
+            compatible = "zmk,behavior-sticky-key";
+            label = "BSL";
+            bindings = <&mo>;
+            #binding-cells = <1>;
+            release-after-ms = <1000>;
+            quick-release;
+        };
     };
 
     combos {
@@ -47,6 +59,11 @@
             bindings = <&kp KP_MULTIPLY>;
             key-positions = <18 19>;
             layers = <3>;
+        };
+
+        esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <10 11>;
         };
     };
 
@@ -73,9 +90,9 @@
 
         sticky_mods {
             bindings = <
-  &trans          &trans     &trans        &trans        &trans    &trans                    &trans        &trans        &trans     &trans
-  &kp LEFT_SHIFT  &sk LCTRL  &sk LEFT_ALT  &sk LEFT_GUI  &trans    &kp LS(LA(LC(LEFT_GUI)))  &sk LEFT_GUI  &sk LEFT_ALT  &sk LCTRL  &kp LEFT_SHIFT
-  &trans          &trans     &trans        &trans        &trans    &trans                    &trans        &trans        &trans     &trans
+  &trans          &trans     &trans        &trans        &trans    &trans                    &trans        &trans   &kp LS(ENTER)  &trans
+  &sk LEFT_SHIFT  &sk LCTRL  &sk LEFT_ALT  &sk LEFT_GUI  &trans    &sk LS(LA(LC(LEFT_GUI)))  &sk LEFT_GUI  &kp TAB  &kp ENTER      &kp ESCAPE
+  &trans          &trans     &trans        &trans        &trans    &trans                    &trans        &trans   &trans         &trans
                              &trans        &trans        &trans    &trans                    &trans        &trans
             >;
         };
