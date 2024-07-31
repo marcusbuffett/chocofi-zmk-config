@@ -8,4 +8,4 @@ Illustrations powered by [keymap-drawer](https://caksoylar.github.io/keymap-draw
 
 ### layout
 
-![layout](./layout.svg)
+![layout](./layout.png)
