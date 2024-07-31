@@ -82,10 +82,10 @@
 
         Base {
             bindings = <
-  &sl 3  &kp G  &kp P           &kp M      &tkp_htl 5 GLOBE              &kp LG(SPACE)  &kp B  &kp U  &kp LA(BSPC)  &kp BSPC
-  &kp D  &kp S  &kp T           &kp R      &kp L                         &kp H          &kp N  &kp E  &kp A         &kp I
-  &kp C  &kp V  &kp K           &kp W      &trans                        &caps_word     &kp F  &kp J  &kp X         &kp Y
-                &sk LEFT_SHIFT  &kp SPACE  &tap_repeat_hold_layer 4 0    &sl 1          &kp O  &sl 2
+  &sl 3  &kp G  &kp P           &kp M      &tkp_htl 5 GLOBE    &kp LG(SPACE)  &kp B  &kp U  &kp LA(BSPC)  &kp BSPC
+  &kp D  &kp S  &kp T           &kp R      &kp L               &kp H          &kp N  &kp E  &kp A         &kp I
+  &kp C  &kp V  &kp K           &kp W      &trans              &caps_word     &kp F  &kp J  &kp X         &kp Y
+                &sk LEFT_SHIFT  &kp SPACE  &lt 4 ENTER         &sl 1          &kp O  &sl 2
             >;
         };
 
@@ -101,7 +101,7 @@
         sticky_mods {
             bindings = <
   &trans          &trans     &trans        &trans        &trans    &trans                    &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp LS(ENTER)  &kp K_MUTE
-  &sk LEFT_SHIFT  &sk LCTRL  &sk LEFT_ALT  &sk LEFT_GUI  &trans    &sk LS(LA(LC(LEFT_GUI)))  &sk LEFT_GUI     &kp TAB            &kp ENTER      &kp ESCAPE
+  &sk LEFT_SHIFT  &sk LCTRL  &sk LEFT_ALT  &sk LEFT_GUI  &trans    &sk LS(LA(LC(LEFT_GUI)))  &sk LEFT_GUI     &kp TAB            &key_repeat    &kp ESCAPE
   &trans          &trans     &trans        &trans        &trans    &trans                    &kp C_NEXT       &kp C_PREV         &trans         &kp K_PLAY_PAUSE
                              &trans        &trans        &trans    &trans                    &trans           &trans
             >;
@@ -127,10 +127,10 @@
 
         one_hand {
             bindings = <
-  &trans     &kp LC(UP)  &kp LC(DOWN)  &kp LS(LG(KP_NUMBER_4))  &trans       &trans  &trans  &trans  &trans  &trans
-  &kp LG(C)  &kp LG(V)   &kp BSPC      &kp TAB                  &trans       &trans  &trans  &trans  &trans  &trans
-  &trans     &trans      &trans        &kp LS(LG(M))            &to 0        &trans  &trans  &trans  &trans  &trans
-                         &kp LALT      &kp LGUI                 &kp LSHFT    &trans  &trans  &trans
+  &trans     &kp LC(UP)  &kp LC(DOWN)    &kp LS(LG(KP_NUMBER_4))  &trans          &trans  &trans  &trans  &trans  &trans
+  &kp LG(C)  &kp LG(V)   &kp BSPC        &kp TAB                  &trans          &trans  &trans  &trans  &trans  &trans
+  &trans     &trans      &trans          &kp LS(LG(M))            &to 0           &trans  &trans  &trans  &trans  &trans
+                         &kp LEFT_SHIFT  &kp LGUI                 &kp LEFT_ALT    &trans  &trans  &trans
             >;
         };
     };
