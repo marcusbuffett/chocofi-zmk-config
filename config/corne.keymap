@@ -75,7 +75,6 @@
             bindings = <&kp ESCAPE>;
             key-positions = <11 10>;
             require-prior-idle-ms = <100>;
-            layers = <0>;
             timeout-ms = <20>;
         };
     };
