@@ -14,7 +14,10 @@
 &sl {
 };
 
-&sk { quick-release; };
+&sk {
+    quick-release;
+    release-after-ms = <500>;
+};
 
 / {
     chosen { zmk,matrix_transform = &five_column_transform; };
@@ -67,7 +70,7 @@
             bindings = <&kp TAB>;
             key-positions = <12 13>;
             layers = <0>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <300>;
             timeout-ms = <20>;
         };
 
