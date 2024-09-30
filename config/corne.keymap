@@ -89,7 +89,7 @@
             bindings = <
   &sl 3  &kp G  &kp P           &kp M      &tkp_htl 5 GLOBE    &kp LG(SPACE)  &kp B  &kp U  &kp LA(BSPC)  &kp BSPC
   &kp D  &kp S  &kp T           &kp R      &kp L               &kp H          &kp N  &kp E  &kp A         &kp I
-  &kp C  &kp V  &kp K           &kp W      &trans              &caps_word     &kp F  &kp J  &kp X         &kp Y
+  &kp C  &kp V  &kp K           &kp W      &kp LC(PERCENT)     &caps_word     &kp F  &kp J  &kp X         &kp Y
                 &sk LEFT_SHIFT  &kp SPACE  &lt 4 ENTER         &sl 1          &kp O  &sl 2
             >;
         };
